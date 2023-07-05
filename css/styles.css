@@ -9,11 +9,11 @@
   --primary-cornflower-color: #e7e9fc;
   --primary-grey-color: #8e8f99;
   --primary-green-color: #31d0aa;
-  --primary-backdrop-color: rgba(46, 47, 66, 0.4);
+  --primary-backdrop-color: #2e2f4266;
   --primary-modal-color: #fcfcfc;
   --modal-close-color: #0000001a;
 
-  --gradient: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7));
+  --gradient: linear-gradient(#2e2f42b3, #2e2f42b3);
   --transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 h1,
@@ -47,9 +47,8 @@ img {
 }
 .header {
   border-bottom: 1px solid var(--primary-cornflower-color);
-  box-shadow: 0px 1px 6px 0px rgba(46, 47, 66, 0.08),
-    0px 1px 1px 0px rgba(46, 47, 66, 0.16),
-    0px 2px 1px 0px rgba(46, 47, 66, 0.08);
+  box-shadow: 0px 1px 6px 0px #2e2f4214, 0px 1px 1px 0px #2e2f4229,
+    0px 2px 1px 0px #2e2f4214;
 }
 .link {
   text-decoration: none;
@@ -118,6 +117,9 @@ img {
   transition: background-color var(--transition);
 }
 .button {
+  background-color: var(--primary-iris-color);
+  color: var(--primary-white-color);
+  border: none;
   font-family: inherit;
   font-weight: 500;
   font-size: 16px;
@@ -126,9 +128,22 @@ img {
   display: block;
   border-radius: 4px;
   cursor: pointer;
+  transition: background-color var(--transition);
 }
-/*Specific styles*/
+.form-input {
+  background-color: transparent;
+  outline: transparent;
+  border-radius: 4px;
+  padding: 8px 16px;
+}
+.caption {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 0.67;
+  letter-spacing: 0.32px;
+}
 
+/*Specific styles*/
 /*header*/
 .header-accent {
   color: var(--primary-blue-color);
@@ -205,6 +220,7 @@ img {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  margin: 0 auto;
 }
 .hero-title {
   max-width: 496px;
@@ -218,17 +234,13 @@ img {
   margin-bottom: 48px;
 }
 .hero-btn {
-  background-color: var(--primary-iris-color);
-  color: var(--primary-white-color);
   padding: 16px 32px;
-  border: none;
   margin: 0 auto;
   min-width: 169px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
-  transition: background-color var(--transition);
 }
-.hero-btn:hover,
-.hero-btn:focus {
+.button:hover,
+.button:focus {
   background-color: var(--primary-ocean-color);
 }
 
@@ -256,9 +268,8 @@ img {
   background-color: var(--primary-white-color);
   border-radius: 0px 0px 4px 4px;
   width: calc((100% - 72px) / 4);
-  box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08),
-    0px 1px 1px 0px rgba(46, 47, 66, 0.16),
-    0px 1px 6px 0px rgba(46, 47, 66, 0.08);
+  box-shadow: 0px 2px 1px 0px #2e2f4214, 0px 1px 1px 0px #2e2f4229,
+    0px 1px 6px 0px #2e2f4214;
 }
 .card-content {
   display: flex;
@@ -342,11 +353,10 @@ img {
 }
 .footer-title {
   color: var(--primary-white-color);
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 24px;
-  letter-spacing: 0.32px;
   margin-bottom: 16px;
+}
+.footer-networks {
+  margin-right: 80px;
 }
 .networks-list {
   display: flex;
@@ -358,6 +368,36 @@ img {
 .footer-circle:hover,
 .footer-circle:focus {
   background-color: var(--primary-green-color);
+}
+.footer-form {
+  display: flex;
+  align-items: flex-end;
+  gap: 24px;
+}
+.subscribtion-label {
+  display: flex;
+  flex-direction: column;
+}
+.footer-input {
+  color: var(--primary-white-color);
+  border: 1px solid var(--primary-white-color);
+  box-shadow: 0px 4px 4px 0px #00000026;
+  height: 40px;
+}
+.footer-input::placeholder {
+  color: var(--primary-white-color);
+  font-size: 12px;
+  line-height: 0.5;
+  letter-spacing: 0.48px;
+}
+.form-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  padding: 8px 24px;
+}
+.subscribe-icon {
+  fill: var(--primary-white-color);
 }
 
 /* modal */
@@ -380,6 +420,7 @@ img {
   pointer-events: none;
 }
 .modal {
+  padding: 24px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -423,6 +464,102 @@ img {
 .close-btn:hover .close,
 .close-btn:focus .close {
   fill: var(--primary-white-color);
+}
+.modal-caption {
+  margin-top: 48px;
+  margin-bottom: 16px;
+  color: var(--primary-blue-color);
+  text-align: center;
+}
+.form-label {
+  position: relative;
+  display: block;
+}
+.form-label:not(:last-child) {
+  margin-bottom: 8px;
+}
+.label-text {
+  color: var(--primary-grey-color);
+  font-size: 12px;
+  line-height: 0.86;
+  letter-spacing: 0.48px;
+  margin-bottom: 4px;
+}
+.modal-input {
+  width: 100%;
+  border: 1px solid var(--primary-backdrop-color);
+  transition: border-color var(--transition);
+  height: 40px;
+}
+.modal-input:focus {
+  border-color: var(--primary-iris-color);
+}
+.modal-icon {
+  fill: var(--primary-blue-color);
+  position: absolute;
+  left: 16px;
+  bottom: 11px;
+  transition: fill var(--transition);
+}
+.modal-input:focus + .modal-icon {
+  fill: var(--primary-iris-color);
+}
+.modal-btn {
+  box-shadow: 0px 4px 4px 0px #00000026;
+  padding: 16px 32px;
+  margin: 0 auto;
+  width: 169px;
+}
+.form-comment {
+  width: 100%;
+  border: 1px solid var(--primary-backdrop-color);
+  color: var(var(--primary-backdrop-color));
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.48px;
+  resize: none;
+  transition: border-color var(--transition);
+  margin-bottom: 16px;
+}
+.form-comment:focus {
+  border-color: var(--primary-iris-color);
+}
+.custom-checkbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 2px;
+  border: 1px solid var(--primary-backdrop-color);
+  transition: background-color var(--transition), border-color var(--transition);
+}
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+.custom-checkbox-mark {
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+.modal-checkbox:checked + .custom-checkbox {
+  background-color: var(--primary-ocean-color);
+  border-color: var(--primary-ocean-color);
+}
+.modal-checkbox:checked + .custom-checkbox > .custom-checkbox-mark {
+  opacity: 1;
+}
+.modal-text {
+  color: var(--primary-grey-color);
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.48px;
+  user-select: none;
+}
+.accent {
+  color: var(--primary-iris-color);
 }
 
 /*portfolio*/
