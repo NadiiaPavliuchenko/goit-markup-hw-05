@@ -9,7 +9,7 @@
   --primary-cornflower-color: #e7e9fc;
   --primary-grey-color: #8e8f99;
   --primary-green-color: #31d0aa;
-  --primary-backdrop-color: #2e2f4266;
+  --primary-backdrop-color: rgba(46, 47, 66, 0.4);
   --primary-modal-color: #fcfcfc;
   --modal-close-color: #0000001a;
 
@@ -476,7 +476,11 @@ img {
   color: var(--primary-blue-color);
   text-align: center;
 }
+.form-content-container {
+  margin-bottom: 8px;
+}
 .form-label {
+  display: block;
   color: var(--primary-grey-color);
   font-size: 12px;
   line-height: 1.17;
@@ -514,7 +518,7 @@ img {
   width: 100%;
   height: 120px;
   border: 1px solid var(--primary-backdrop-color);
-  color: var(var(--primary-backdrop-color));
+  color: var(--primary-backdrop-color);
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.04em;
