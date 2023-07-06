@@ -139,8 +139,8 @@ img {
 .caption {
   font-size: 16px;
   font-weight: 500;
-  line-height: 0.67;
-  letter-spacing: 0.32px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
 }
 
 /*Specific styles*/
@@ -381,8 +381,12 @@ img {
 .footer-input {
   color: var(--primary-white-color);
   border: 1px solid var(--primary-white-color);
-  box-shadow: 0px 4px 4px 0px #00000026;
   height: 40px;
+  width: 264px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  font-size: 12px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
 }
 .footer-input::placeholder {
   color: var(--primary-white-color);
@@ -391,13 +395,15 @@ img {
   letter-spacing: 0.48px;
 }
 .form-btn {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  gap: 16px;
+  justify-content: center;
   padding: 8px 24px;
+  min-width: 165px;
 }
 .subscribe-icon {
   fill: var(--primary-white-color);
+  margin-left: 16px;
 }
 
 /* modal */
@@ -420,7 +426,7 @@ img {
   pointer-events: none;
 }
 .modal {
-  padding: 24px;
+  padding: 72px 24px 24px 24px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -466,30 +472,26 @@ img {
   fill: var(--primary-white-color);
 }
 .modal-caption {
-  margin-top: 48px;
   margin-bottom: 16px;
   color: var(--primary-blue-color);
   text-align: center;
 }
 .form-label {
-  position: relative;
-  display: block;
-}
-.form-label:not(:last-child) {
-  margin-bottom: 8px;
-}
-.label-text {
   color: var(--primary-grey-color);
   font-size: 12px;
-  line-height: 0.86;
-  letter-spacing: 0.48px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
   margin-bottom: 4px;
+}
+.form-input-container {
+  position: relative;
 }
 .modal-input {
   width: 100%;
   border: 1px solid var(--primary-backdrop-color);
   transition: border-color var(--transition);
   height: 40px;
+  padding-left: 38px;
 }
 .modal-input:focus {
   border-color: var(--primary-iris-color);
@@ -498,68 +500,64 @@ img {
   fill: var(--primary-blue-color);
   position: absolute;
   left: 16px;
-  bottom: 11px;
+  top: 50%;
+  transform: translateY(-50%);
   transition: fill var(--transition);
 }
 .modal-input:focus + .modal-icon {
   fill: var(--primary-iris-color);
 }
-.modal-btn {
-  box-shadow: 0px 4px 4px 0px #00000026;
-  padding: 16px 32px;
-  margin: 0 auto;
-  width: 169px;
+.form-comment-container {
+  margin-bottom: 16px;
 }
 .form-comment {
   width: 100%;
+  height: 120px;
   border: 1px solid var(--primary-backdrop-color);
   color: var(var(--primary-backdrop-color));
   font-size: 12px;
-  line-height: 14px;
-  letter-spacing: 0.48px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
   resize: none;
   transition: border-color var(--transition);
-  margin-bottom: 16px;
 }
 .form-comment:focus {
   border-color: var(--primary-iris-color);
 }
+.checkbox-container {
+  margin-bottom: 24px;
+}
+.checkbox-label {
+  color: var(--primary-grey-color);
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+}
 .custom-checkbox {
-  display: flex;
+  display: inline-flex;
+  fill: transparent;
   justify-content: center;
   align-items: center;
   width: 16px;
   height: 16px;
   border-radius: 2px;
   border: 1px solid var(--primary-backdrop-color);
-  transition: background-color var(--transition), border-color var(--transition);
+  transition: background-color var(--transition), border var(--transition),
+    fill var(--transition);
 }
-.checkbox-label {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 24px;
-}
-.custom-checkbox-mark {
-  opacity: 0;
-  transition: opacity var(--transition);
-}
-.modal-checkbox:checked + .custom-checkbox {
+.modal-checkbox:checked + .checkbox-label .custom-checkbox {
   background-color: var(--primary-ocean-color);
-  border-color: var(--primary-ocean-color);
-}
-.modal-checkbox:checked + .custom-checkbox > .custom-checkbox-mark {
-  opacity: 1;
-}
-.modal-text {
-  color: var(--primary-grey-color);
-  font-size: 12px;
-  line-height: 14px;
-  letter-spacing: 0.48px;
-  user-select: none;
+  border: none;
+  fill: var(--primary-cloud-color);
 }
 .accent {
   color: var(--primary-iris-color);
+}
+.modal-btn {
+  box-shadow: 0px 4px 4px 0px #00000026;
+  padding: 16px 32px;
+  margin: 0 auto;
+  min-width: 169px;
 }
 
 /*portfolio*/
